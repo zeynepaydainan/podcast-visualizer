@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insulin Resistance &amp; PCOS: The Unseen Link</title>
+    <style>
+        :root {
+            /* Color Palette */
+            --color-primary-text: #1F2937;
+            --color-background-light: #FAFAF7;
+            --color-background-alt: #F0F0E8; /* Slightly darker warm gray */
+
+            --color-accent-1: #0D7377; /* Deep Teal */
+            --color-accent-2: #E56B6F; /* Warm Coral */
+            --color-accent-3: #9CCC65; /* Leafy Green */
+
+            /* Typography */
+            --font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family-system);
+            color: var(--color-primary-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 960px; /* Optimized for content density */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background-color: var(--color-background-light);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsive font size */
+            font-weight: 800;
+            margin: 0 0 15px;
+            line-height: 1.1;
+        }
+
+        .hero p.subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+            margin-top: 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .stat-box {
+            margin-top: 40px;
+            display: inline-block;
+            padding: 20px 30px;
+            border: 2px solid var(--color-accent-1);
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+
+        .hero .stat-number {
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 900;
+            color: var(--color-accent-1);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .hero .stat-caption {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            font-weight: 600;
+            color: var(--color-primary-text);
+        }
+
+        /* --- The Big Idea Section --- */
+        .big-idea {
+            background-color: var(--color-accent-2);
+            padding: 40px 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .big-idea p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 500;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Concepts Section --- */
+        .concept-section {
+            padding: 60px 0;
+        }
+
+        .concept-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 40px 20px;
+            margin-bottom: 0; /* Concepts should flow without extra margin between */
+        }
+
+        .concept-item:nth-child(even) {
+            background-color: var(--color-background-alt);
+        }
+        .concept-item:nth-child(odd) {
+            background-color: var(--color-background-light);
+        }
+
+        .concept-number {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-right: 25px;
+            flex-shrink: 0;
+            line-height: 1;
+            padding-top: 5px; /* Adjust for better alignment with text */
+        }
+
+        /* Cycle through accent colors for concept numbers */
+        .concept-item:nth-child(3n+1) .concept-number { color: var(--color-accent-1); }
+        .concept-item:nth-child(3n+2) .concept-number { color: var(--color-accent-2); }
+        .concept-item:nth-child(3n+3) .concept-number { color: var(--color-accent-3); }
+
+        .concept-content h3 {
+            font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+            margin: 0 0 10px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .concept-content p {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            margin: 0;
+            max-width: 650px; /* Constrain text width for readability */
+        }
+
+        /* --- Tips Section --- */
+        .tips-section {
+            padding: 60px 20px;
+            background-color: var(--color-background-light);
+        }
+
+        .tips-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--color-accent-1);
+        }
+
+        .tip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 0 auto;
+            max-width: 1000px; /* Wider for tips grid */
+        }
+
+        .tip-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 25px;
+            border-top: 5px solid; /* Placeholder for rotating accent color */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Cycle through accent colors for tip card top borders */
+        .tip-card:nth-child(3n+1) { border-top-color: var(--color-accent-1); }
+        .tip-card:nth-child(3n+2) { border-top-color: var(--color-accent-2); }
+        .tip-card:nth-child(3n+3) { border-top-color: var(--color-accent-3); }
+
+        .tip-icon {
+            font-size: 3rem;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .tip-title {
+            font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .tip-description {
+            font-size: clamp(0.95rem, 1.7vw, 1.1rem);
+            margin: 0;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--color-accent-1);
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .hero {
+                padding: 60px 15px 40px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p.subtitle {
+                font-size: 1.1rem;
+            }
+            .hero .stat-number {
+                font-size: 4rem;
+            }
+            .hero .stat-caption {
+                font-size: 1.2rem;
+            }
+
+            .big-idea {
+                padding: 30px 15px;
+            }
+            .big-idea p {
+                font-size: 1rem;
+            }
+
+            .concept-item {
+                flex-direction: column;
+                padding: 30px 15px;
+                align-items: center;
+            }
+            .concept-number {
+                margin-right: 0;
+                margin-bottom: 15px;
+                padding-top: 0;
+            }
+            .concept-content h3 {
+                text-align: center;
+                font-size: 1.3rem;
+            }
+            .concept-content p {
+                text-align: center;
+                font-size: 0.95rem;
+            }
+
+            .tips-section {
+                padding: 40px 15px;
+            }
+            .tips-section h2 {
+                font-size: 2rem;
+            }
+            .tip-grid {
+                grid-template-columns: 1fr;
+            }
+            .tip-card {
+                padding: 20px;
+            }
+            .tip-icon {
+                font-size: 2.5rem;
+            }
+            .tip-title {
+                font-size: 1.1rem;
+            }
+            .tip-description {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Insulin Resistance &amp; PCOS: The Unseen Link</h1>
+            <p class="subtitle">Unraveling the hormonal connection and actionable strategies for women&apos;s health.</p>
+            <div class="stat-box">
+                <div class="stat-number">70%</div>
+                <div class="stat-caption">of women with PCOS have insulin resistance</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="big-idea">
+        <p>
+            Insulin resistance is a foundational driver in Polycystic Ovary Syndrome (PCOS), where cells become less responsive to insulin, leading to chronically high insulin levels that directly stimulate excess androgen production in the ovaries.
+        </p>
+    </section>
+
+    <section class="concept-section">
+        <div class="container">
+            <div class="concept-item">
+                <div class="concept-number">1</div>
+                <div class="concept-content">
+                    <h3>Insulin Function</h3>
+                    <p>Insulin is a hormone released by the pancreas, primarily after eating carbohydrates, to move glucose from the bloodstream into cells for energy.</p>
+                </div>
+            </div>
+            <div class="concept-item">
+                <div class="concept-number">2</div>
+                <div class="concept-content">
+                    <h3>Insulin Resistance</h3>
+                    <p>This occurs when cells become less responsive to insulin&apos;s signal, causing the pancreas to produce more insulin to achieve the same effect of clearing glucose.</p>
+                </div>
+            </div>
+            <div class="concept-item">
+                <div class="concept-number">3</div>
+                <div class="concept-content">
+                    <h3>Hyperinsulinemia</h3>
+                    <p>This is a state of chronically high levels of circulating insulin in the bloodstream, often resulting from insulin resistance.</p>
+                </div>
+            </div>
+            <div class="concept-item">
+                <div class="concept-number">4</div>
+                <div class="concept-content">
+                    <h3>Insulin-Androgen Link in PCOS</h3>
+                    <p>Chronically elevated insulin directly stimulates the ovaries to produce excessive amounts of androgens (like testosterone), which then drive many classic PCOS symptoms.</p>
+                </div>
+            </div>
+            <div class="concept-item">
+                <div class="concept-number">5</div>
+                <div class="concept-content">
+                    <h3>Insulin Resistance-PCOS Feedback Loop</h3>
+                    <p>Insulin resistance leads to higher androgen production, and this elevated androgen environment can, in turn, further worsen insulin sensitivity, creating a self-perpetuating cycle.</p>
+                </div>
+            </div>
+            <div class="concept-item">
+                <div class="concept-number">6</div>
+                <div class="concept-content">
+                    <h3>Muscle Building for Glucose Disposal</h3>
+                    <p>Building skeletal muscle through resistance training increases the body&apos;s capacity to absorb glucose from meals and improves overall insulin sensitivity.</p>
+                </div>
+            </div>
+            <div class="concept-item">
+                <div class="concept-number">7</div>
+                <div class="concept-content">
+                    <h3>Post-meal Walking for Glucose Control</h3>
+                    <p>Taking a short walk after eating causes muscles to contract and pull glucose from the bloodstream, thereby blunting post-meal glucose spikes with less need for insulin.</p>
+                </div>
+            </div>
+            <div class="concept-item">
+                <div class="concept-number">8</div>
+                <div class="concept-content">
+                    <h3>Meal Sequencing for Insulin Response</h3>
+                    <p>Eating protein, fiber, and vegetables before starches slows down glucose entry into the bloodstream, which reduces the amount of insulin the body needs to release.</p>
+                </div>
+            </div>
+            <div class="concept-item">
+                <div class="concept-number">9</div>
+                <div class="concept-content">
+                    <h3>Protein and Fiber for Insulin Stability</h3>
+                    <p>Prioritizing protein and fiber in the diet slows digestion and promotes satiety, helping to maintain steadier insulin levels throughout the day.</p>
+                </div>
+            </div>
+            <div class="concept-item">
+                <div class="concept-number">10</div>
+                <div class="concept-content">
+                    <h3>Sleep&apos;s Impact on Insulin Sensitivity</h3>
+                    <p>Adequate sleep is crucial because even a few nights of poor sleep can significantly reduce the body&apos;s sensitivity to insulin.</p>
+                </div>
+            </div>
+            <div class="concept-item">
+                <div class="concept-number">11</div>
+                <div class="concept-content">
+                    <h3>Inositol for Insulin Sensitivity in PCOS</h3>
+                    <p>Supplements like myo-inositol and D-chiro-inositol have been shown to improve insulin sensitivity and support healthy ovulation in women with PCOS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tips-section">
+        <div class="container">
+            <h2>Actionable Tips</h2>
+            <div class="tip-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">💪</div>
+                    <h3 class="tip-title">Build muscle through resistance training</h3>
+                    <p class="tip-description">Skeletal muscle is the body&apos;s largest glucose sink. Increasing muscle and its insulin sensitivity builds more capacity to clear glucose, making it a high-leverage intervention for insulin resistance.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🚶‍♀️</div>
+                    <h3 class="tip-title">Take a short walk after meals</h3>
+                    <p class="tip-description">Contracting muscles pull in glucose without needing much insulin, which measurably blunts the post-meal glucose spike.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🍽️</div>
+                    <h3 class="tip-title">Practice meal sequencing</h3>
+                    <p class="tip-description">This method slows how quickly glucose enters the bloodstream, reducing the amount of insulin your body needs to release for the same food.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🥗</div>
+                    <h3 class="tip-title">Prioritize protein and fiber</h3>
+                    <p class="tip-description">Both protein and fiber slow digestion and improve satiety, which helps support steadier insulin levels throughout the day.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">😴</div>
+                    <h3 class="tip-title">Protect your sleep</h3>
+                    <p class="tip-description">Even a few nights of poor sleep can measurably reduce insulin sensitivity, making good sleep a crucial lever in this system.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">💊</div>
+                    <h3 class="tip-title">Discuss inositol with your doctor</h3>
+                    <p class="tip-description">These supplements have a solid evidence base for improving insulin sensitivity and supporting ovulation in PCOS.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">👩‍⚕️</div>
+                    <h3 class="tip-title">Work with a clinician</h3>
+                    <p class="tip-description">A clinician can help you get the right lab tests, discuss medical interventions like metformin, and ensure lifestyle and medical tools work best together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Educational summary, not medical advice. Consult a clinician.</p>
+    </footer>
+
+</body>
+</html>
